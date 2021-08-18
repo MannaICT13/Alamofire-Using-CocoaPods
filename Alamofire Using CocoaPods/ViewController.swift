@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let urlString = "https://httpbin.org/get"
+        AF.request(urlString).response { (response) in
+            debugPrint(response)
+        }
+        
+       
     }
 
 
